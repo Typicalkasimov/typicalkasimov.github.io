@@ -1,0 +1,703 @@
+
+<!-- saved from url=(0120)file:///private/tmp/claude-501/-Users-andrejivanov/14d67982-1490-4142-be59-23a3089cd4d6/scratchpad/kasimov-city-day.html -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><title>День города Касимов</title>
+<link rel="preconnect" href="https://fonts.googleapis.com/">
+<link rel="stylesheet" href="./День города Касимов_files/css2">
+<style>
+  :root{
+    --bg: #f2f3ec;
+    --surface: #ffffff;
+    --surface-2: #e9ebe0;
+    --ink: #182338;
+    --ink-soft: #566073;
+    --ink-faint: #838d9c;
+    --line: rgba(24,35,56,0.14);
+    --line-strong: rgba(24,35,56,0.28);
+    --accent: #a97420;
+    --accent-strong: #7d5416;
+    --accent-wash: rgba(169,116,32,0.12);
+    --river: #1f3a5f;
+    --focus: #2f6f76;
+
+    --cat-cinema: #55599f;
+    --cat-kids: #2f7a58;
+    --cat-folk: #a1502b;
+    --cat-lit: #7c3f70;
+    --cat-market: #8a6c1c;
+    --cat-ceremony: #a97420;
+    --cat-music: #b1481f;
+    --cat-sport: #206b7c;
+  }
+
+  @media (prefers-color-scheme: dark){
+    :root:not([data-theme="light"]){
+      --bg: #10151f;
+      --surface: #171d29;
+      --surface-2: #1e2531;
+      --ink: #eaedf3;
+      --ink-soft: #aab3c4;
+      --ink-faint: #7c8598;
+      --line: rgba(234,237,243,0.14);
+      --line-strong: rgba(234,237,243,0.28);
+      --accent: #dda54c;
+      --accent-strong: #f0c274;
+      --accent-wash: rgba(221,165,76,0.14);
+      --river: #7fa3c9;
+      --focus: #63b3ba;
+
+      --cat-cinema: #8f93d6;
+      --cat-kids: #5fbb8f;
+      --cat-folk: #d68a5f;
+      --cat-lit: #c07ab3;
+      --cat-market: #c9a94a;
+      --cat-ceremony: #dda54c;
+      --cat-music: #e08659;
+      --cat-sport: #5bacc0;
+    }
+  }
+  :root[data-theme="dark"]{
+    --bg: #10151f;
+    --surface: #171d29;
+    --surface-2: #1e2531;
+    --ink: #eaedf3;
+    --ink-soft: #aab3c4;
+    --ink-faint: #7c8598;
+    --line: rgba(234,237,243,0.14);
+    --line-strong: rgba(234,237,243,0.28);
+    --accent: #dda54c;
+    --accent-strong: #f0c274;
+    --accent-wash: rgba(221,165,76,0.14);
+    --river: #7fa3c9;
+    --focus: #63b3ba;
+
+    --cat-cinema: #8f93d6;
+    --cat-kids: #5fbb8f;
+    --cat-folk: #d68a5f;
+    --cat-lit: #c07ab3;
+    --cat-market: #c9a94a;
+    --cat-ceremony: #dda54c;
+    --cat-music: #e08659;
+    --cat-sport: #5bacc0;
+  }
+
+  *{box-sizing:border-box;}
+  body{
+    background:var(--bg);
+    color:var(--ink);
+    font-family:'Manrope',system-ui,sans-serif;
+    line-height:1.5;
+  }
+  ::selection{ background:var(--accent-wash); }
+  a{ color:inherit; }
+  h1,h2,h3{
+    font-family:'Spectral',Georgia,serif;
+    font-weight:600;
+    text-wrap:balance;
+    margin:0;
+  }
+  .wrap{ max-width:920px; margin:0 auto; padding:0 1.5rem; }
+  button{ font-family:inherit; }
+
+  /* ---------- Hero ---------- */
+  .hero{ padding:3.25rem 0 1.75rem; }
+  .eyebrow{
+    font-family:'Manrope',sans-serif;
+    font-weight:700;
+    font-size:0.72rem;
+    letter-spacing:0.11em;
+    text-transform:uppercase;
+    color:var(--ink-faint);
+    margin-bottom:0.9rem;
+  }
+  .hero h1{
+    font-size:clamp(2.1rem, 5vw, 3.1rem);
+    letter-spacing:-0.01em;
+    color:var(--ink);
+  }
+  .hero h1 em{
+    font-style:italic;
+    color:var(--accent-strong);
+  }
+  .hero-sub{
+    margin-top:0.85rem;
+    max-width:56ch;
+    color:var(--ink-soft);
+    font-size:1.02rem;
+  }
+  .hero-meta{
+    display:flex; flex-wrap:wrap; gap:0.6rem 1rem;
+    margin-top:1.4rem;
+    align-items:center;
+  }
+  .date-chip{
+    display:inline-flex; align-items:baseline; gap:0.45rem;
+    background:var(--surface);
+    border:1px solid var(--line);
+    border-radius:999px;
+    padding:0.5rem 1rem;
+    font-family:'JetBrains Mono',monospace;
+    font-size:0.88rem;
+    color:var(--ink);
+  }
+  .date-chip b{ font-weight:600; color:var(--accent-strong); }
+  .countdown{
+    font-size:0.85rem; color:var(--ink-faint);
+    font-family:'JetBrains Mono',monospace;
+  }
+
+  .river-divider{ display:block; width:100%; height:22px; margin:1.6rem 0 0; }
+  .river-divider path{ fill:none; stroke:var(--river); stroke-width:1.4; opacity:0.55; }
+  .river-divider circle{ fill:var(--accent); }
+
+  .stats-row{
+    display:flex; flex-wrap:wrap; gap:0.75rem;
+    margin-top:1.5rem;
+  }
+  .stat{
+    flex:1 1 140px;
+    background:var(--surface);
+    border:1px solid var(--line);
+    border-radius:10px;
+    padding:0.75rem 0.95rem;
+  }
+  .stat b{
+    display:block; font-family:'Spectral',serif; font-size:1.4rem; font-weight:600;
+    font-variant-numeric:tabular-nums;
+  }
+  .stat span{ font-size:0.76rem; color:var(--ink-faint); }
+
+  /* ---------- Filter bar ---------- */
+  .filter-bar{
+    position:sticky; top:0; z-index:20;
+    background:color-mix(in srgb, var(--bg) 88%, transparent);
+    backdrop-filter:blur(10px) saturate(1.1);
+    -webkit-backdrop-filter:blur(10px) saturate(1.1);
+    border-bottom:1px solid var(--line);
+    padding:0.9rem 0;
+    margin-top:1.75rem;
+  }
+  .filter-row{ display:flex; align-items:center; gap:0.6rem; flex-wrap:wrap; }
+  .search-box{
+    position:relative; flex:1 1 220px; min-width:180px;
+  }
+  .search-box input{
+    width:100%;
+    background:var(--surface);
+    border:1px solid var(--line);
+    border-radius:9px;
+    padding:0.55rem 0.8rem 0.55rem 2.1rem;
+    font-family:'Manrope',sans-serif;
+    font-size:0.9rem;
+    color:var(--ink);
+  }
+  .search-box input:focus{ outline:2px solid var(--focus); outline-offset:1px; }
+  .search-box input::placeholder{ color:var(--ink-faint); }
+  .search-box svg{
+    position:absolute; left:0.65rem; top:50%; transform:translateY(-50%);
+    width:15px; height:15px; stroke:var(--ink-faint); fill:none; stroke-width:1.8;
+  }
+  .view-toggle{
+    display:inline-flex; background:var(--surface-2); border-radius:9px; padding:3px;
+    border:1px solid var(--line);
+  }
+  .view-toggle button{
+    border:none; background:transparent; color:var(--ink-soft);
+    font-size:0.82rem; font-weight:600; padding:0.42rem 0.8rem; border-radius:7px;
+    cursor:pointer;
+  }
+  .view-toggle button.active{ background:var(--surface); color:var(--ink); box-shadow:0 1px 2px var(--line); }
+  .view-toggle button:focus-visible{ outline:2px solid var(--focus); }
+
+  .chip-groups{ margin-top:0.7rem; display:flex; flex-direction:column; gap:0.55rem; }
+  .chip-group{ display:flex; align-items:center; gap:0.5rem; flex-wrap:wrap; }
+  .chip-group-label{
+    font-size:0.68rem; font-weight:700; letter-spacing:0.08em; text-transform:uppercase;
+    color:var(--ink-faint); flex:0 0 auto; width:5.4rem;
+  }
+  .chip-scroll{ display:flex; gap:0.4rem; flex-wrap:wrap; }
+  .chip{
+    display:inline-flex; align-items:center; gap:0.4rem;
+    border:1px solid var(--line); background:var(--surface);
+    color:var(--ink-soft);
+    border-radius:999px; padding:0.34rem 0.75rem 0.34rem 0.6rem;
+    font-size:0.79rem; font-weight:600; cursor:pointer;
+    white-space:nowrap;
+  }
+  .chip .dot{ width:8px; height:8px; border-radius:50%; flex:0 0 auto; }
+  .chip[aria-pressed="true"]{
+    background:var(--accent-wash); border-color:var(--accent); color:var(--ink);
+  }
+  .chip:focus-visible{ outline:2px solid var(--focus); outline-offset:1px; }
+
+  .result-line{
+    display:flex; align-items:center; justify-content:space-between; gap:1rem;
+    margin-top:0.65rem; font-size:0.78rem; color:var(--ink-faint);
+  }
+  .reset-link{
+    background:none; border:none; color:var(--focus); font-weight:700; cursor:pointer;
+    font-size:0.78rem; padding:0;
+  }
+  .reset-link:disabled{ opacity:0; pointer-events:none; }
+
+  /* ---------- Time jump nav (timeline view) ---------- */
+  .jumpnav{
+    display:flex; gap:0.4rem; overflow-x:auto; padding:0.2rem 0 0.1rem;
+    margin-top:0.6rem;
+  }
+  .jumpnav a{
+    font-family:'JetBrains Mono',monospace; font-size:0.76rem; font-weight:500;
+    color:var(--ink-soft); border:1px solid var(--line); border-radius:7px;
+    padding:0.28rem 0.55rem; text-decoration:none; flex:0 0 auto;
+  }
+  .jumpnav a:hover{ border-color:var(--accent); color:var(--accent-strong); }
+
+  /* ---------- Content ---------- */
+  main{ padding:2rem 0 5rem; }
+  .day-divider{
+    display:flex; align-items:center; gap:0.75rem;
+    margin:2.4rem 0 1.3rem;
+    font-family:'Spectral',serif; font-style:italic; font-size:1.05rem; color:var(--ink-faint);
+  }
+  .day-divider::after{ content:''; flex:1; height:1px; background:var(--line); }
+  .day-divider:first-child{ margin-top:0; }
+
+  .timeline{
+    border-left:2px solid var(--line);
+    margin-left:0.35rem;
+    padding-left:1.9rem;
+    display:flex; flex-direction:column; gap:2.1rem;
+  }
+  .time-row{ position:relative; scroll-margin-top:11rem; }
+  .time-row::before{
+    content:''; position:absolute; top:0.5rem; left:-1.9rem;
+    width:11px; height:11px; border-radius:50%;
+    background:var(--accent); border:2px solid var(--bg);
+    transform:translateX(-50%);
+  }
+  .time-label{
+    display:flex; align-items:baseline; gap:0.5rem; margin-bottom:0.75rem;
+  }
+  .time-label .t{
+    font-family:'JetBrains Mono',monospace; font-weight:600; font-size:1.05rem;
+    font-variant-numeric:tabular-nums; color:var(--ink);
+  }
+  .time-label .n{ font-size:0.76rem; color:var(--ink-faint); }
+
+  .cards{ display:grid; grid-template-columns:repeat(auto-fill, minmax(255px,1fr)); gap:0.85rem; }
+
+  .card{
+    background:var(--surface);
+    border:1px solid var(--line);
+    border-radius:13px;
+    padding:1rem 1.1rem 1.1rem;
+    display:flex; flex-direction:column; gap:0.55rem;
+    border-top:3px solid var(--cat-color, var(--accent));
+  }
+  .card h3{ font-size:1.05rem; line-height:1.3; color:var(--ink); }
+  .card p{ margin:0; font-size:0.87rem; color:var(--ink-soft); }
+  .card .who{ font-size:0.8rem; color:var(--ink-faint); font-style:italic; }
+  .tag-row{ display:flex; flex-wrap:wrap; gap:0.4rem; margin-top:auto; padding-top:0.35rem; }
+  .tag{
+    display:inline-flex; align-items:center; gap:0.32rem;
+    font-size:0.72rem; font-weight:600; color:var(--ink-soft);
+    background:var(--surface-2); border-radius:999px; padding:0.22rem 0.6rem 0.22rem 0.45rem;
+  }
+  .tag .dot{ width:7px; height:7px; border-radius:50%; }
+  .tag.venue{ color:var(--ink-faint); }
+  .tag.venue svg{ width:11px; height:11px; stroke:var(--ink-faint); fill:none; stroke-width:2; }
+
+  /* ---------- Venue view ---------- */
+  .venue-section{ margin-bottom:2.5rem; }
+  .venue-head{ display:flex; align-items:baseline; gap:0.6rem; margin-bottom:0.2rem; flex-wrap:wrap; }
+  .venue-head h2{ font-size:1.35rem; }
+  .venue-head .count{ font-size:0.78rem; color:var(--ink-faint); font-family:'JetBrains Mono',monospace; }
+  .venue-addr{ font-size:0.84rem; color:var(--ink-soft); margin-bottom:0.9rem; }
+  .venue-list{ display:flex; flex-direction:column; gap:0.6rem; }
+  .vrow{
+    display:flex; gap:0.9rem; align-items:flex-start;
+    background:var(--surface); border:1px solid var(--line); border-radius:11px;
+    padding:0.8rem 1rem; border-left:3px solid var(--cat-color, var(--accent));
+  }
+  .vrow .vtime{
+    font-family:'JetBrains Mono',monospace; font-weight:600; font-size:0.88rem;
+    color:var(--ink); flex:0 0 auto; padding-top:0.1rem; min-width:3.4rem;
+  }
+  .vrow .vbody h3{ font-size:0.98rem; margin-bottom:0.25rem; }
+  .vrow .vbody p{ margin:0; font-size:0.85rem; color:var(--ink-soft); }
+
+  .empty{
+    text-align:center; padding:3.5rem 1rem; color:var(--ink-faint);
+  }
+  .empty p{ margin:0.4rem 0 1rem; }
+  .empty button{
+    background:var(--accent); color:#fff; border:none; border-radius:8px;
+    padding:0.55rem 1.1rem; font-weight:700; font-size:0.85rem; cursor:pointer;
+  }
+
+  footer{
+    border-top:1px solid var(--line); padding:1.75rem 0 2.5rem;
+    font-size:0.78rem; color:var(--ink-faint);
+  }
+  footer p{ margin:0.3rem 0; max-width:60ch; }
+
+  @media (max-width:560px){
+    .chip-group-label{ width:auto; }
+    .card, .vrow{ }
+  }
+
+  @media (prefers-reduced-motion: reduce){
+    *{ scroll-behavior:auto !important; }
+  }
+  html{ scroll-behavior:smooth; }
+</style>
+
+</head><body><div class="wrap">
+  <header class="hero">
+    <div class="eyebrow">Администрация Касимовского муниципального округа · Рязанская область</div>
+    <h1>Касимов отмечает<br><em>День города</em></h1>
+    <p class="hero-sub">Один день — пять площадок и тринадцать событий: от лектория о кино и казачьих песен на Соборной до ночного забега вдоль Оки. Отфильтруйте афишу по интересу или площадке и стройте свой маршрут по городу.</p>
+    <div class="hero-meta">
+      <span class="date-chip">12 сентября 2026 · <b id="weekday">суббота</b></span>
+      <span class="countdown" id="countdown">через 2 дня</span>
+    </div>
+
+    <svg class="river-divider" viewBox="0 0 600 22" preserveAspectRatio="none" aria-hidden="true">
+      <path d="M0 11 C 60 2, 120 20, 180 11 S 300 2, 360 11 S 480 20, 540 11 S 600 4, 600 11"></path>
+      <circle cx="60" cy="6.5" r="2.2"></circle>
+      <circle cx="300" cy="7" r="2.2"></circle>
+      <circle cx="540" cy="6" r="2.2"></circle>
+    </svg>
+
+    <div class="stats-row">
+      <div class="stat"><b id="stat-events">13</b><span>события в программе</span></div>
+      <div class="stat"><b>5</b><span>площадок по городу</span></div>
+      <div class="stat"><b>12:00–23:00</b><span>с обеда до вечера</span></div>
+    </div>
+  </header>
+
+  <div class="filter-bar">
+    <div class="filter-row">
+      <div class="search-box">
+        <svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+        <input id="search" type="text" placeholder="Искать событие, лектора, площадку…" autocomplete="off">
+      </div>
+      <div class="view-toggle" role="group" aria-label="Вид афиши">
+        <button id="view-timeline" class="active" aria-pressed="true">По времени</button>
+        <button id="view-venue" aria-pressed="false">По площадкам</button>
+      </div>
+    </div>
+
+    <div class="chip-groups">
+      <div class="chip-group">
+        <span class="chip-group-label">Тема</span>
+        <div class="chip-scroll" id="cat-chips"><button class="chip" type="button" aria-pressed="false" data-key="cinema"><span class="dot" style="background: var(--cat-cinema);"></span>Кино и лекции</button><button class="chip" type="button" aria-pressed="false" data-key="kids"><span class="dot" style="background: var(--cat-kids);"></span>Дети и молодёжь</button><button class="chip" type="button" aria-pressed="false" data-key="folk"><span class="dot" style="background: var(--cat-folk);"></span>Народная культура</button><button class="chip" type="button" aria-pressed="false" data-key="lit"><span class="dot" style="background: var(--cat-lit);"></span>Литература и искусство</button><button class="chip" type="button" aria-pressed="false" data-key="market"><span class="dot" style="background: var(--cat-market);"></span>Ярмарка и мастер-классы</button><button class="chip" type="button" aria-pressed="false" data-key="ceremony"><span class="dot" style="background: var(--cat-ceremony);"></span>Открытие и награждения</button><button class="chip" type="button" aria-pressed="false" data-key="music"><span class="dot" style="background: var(--cat-music);"></span>Музыка и концерты</button><button class="chip" type="button" aria-pressed="false" data-key="sport"><span class="dot" style="background: var(--cat-sport);"></span>Спорт</button></div>
+      </div>
+      <div class="chip-group">
+        <span class="chip-group-label">Площадка</span>
+        <div class="chip-scroll" id="venue-chips"><button class="chip" type="button" aria-pressed="false" data-key="stage"><span class="dot" style="background: var(--ink-faint);"></span>Главная сцена на Советской</button><button class="chip" type="button" aria-pressed="false" data-key="park"><span class="dot" style="background: var(--ink-faint);"></span>Парк культуры и отдыха</button><button class="chip" type="button" aria-pressed="false" data-key="ckr"><span class="dot" style="background: var(--ink-faint);"></span>Центр культурного развития</button><button class="chip" type="button" aria-pressed="false" data-key="square"><span class="dot" style="background: var(--ink-faint);"></span>Площадь Соборная</button><button class="chip" type="button" aria-pressed="false" data-key="pushkin"><span class="dot" style="background: var(--ink-faint);"></span>Сквер им. Пушкина</button></div>
+      </div>
+    </div>
+
+    <div class="jumpnav" id="jumpnav" style="display: flex;"><a href="file:///private/tmp/claude-501/-Users-andrejivanov/14d67982-1490-4142-be59-23a3089cd4d6/scratchpad/kasimov-city-day.html#t-1200">12:00</a><a href="file:///private/tmp/claude-501/-Users-andrejivanov/14d67982-1490-4142-be59-23a3089cd4d6/scratchpad/kasimov-city-day.html#t-1400">14:00</a><a href="file:///private/tmp/claude-501/-Users-andrejivanov/14d67982-1490-4142-be59-23a3089cd4d6/scratchpad/kasimov-city-day.html#t-1600">16:00</a><a href="file:///private/tmp/claude-501/-Users-andrejivanov/14d67982-1490-4142-be59-23a3089cd4d6/scratchpad/kasimov-city-day.html#t-1700">17:00</a><a href="file:///private/tmp/claude-501/-Users-andrejivanov/14d67982-1490-4142-be59-23a3089cd4d6/scratchpad/kasimov-city-day.html#t-1800">18:00</a><a href="file:///private/tmp/claude-501/-Users-andrejivanov/14d67982-1490-4142-be59-23a3089cd4d6/scratchpad/kasimov-city-day.html#t-1930">19:30</a><a href="file:///private/tmp/claude-501/-Users-andrejivanov/14d67982-1490-4142-be59-23a3089cd4d6/scratchpad/kasimov-city-day.html#t-2100">21:00</a></div>
+
+    <div class="result-line">
+      <span id="result-count">Показаны все 13 событий</span>
+      <button class="reset-link" id="reset-btn" disabled="">Сбросить фильтры</button>
+    </div>
+  </div>
+
+  <main id="main"><div class="timeline"><div class="day-divider">День</div><div class="time-row" id="t-1200"><div class="time-label"><span class="t">12:00</span><span class="n">2 события</span></div><div class="cards"><article class="card" style="--cat-color:var(--cat-cinema)"><h3>Лекторий «Кино как пространство смыслов»</h3><p class="who">Александр Семенюк — киновед, сценарист, преподаватель</p><p>Открытая лекция о кино как способе говорить о главном, с примерами из истории и практики кинопроизводства. При поддержке «Мосфильма».</p><div class="tag-row"><span class="tag"><span class="dot" style="background:var(--cat-cinema)"></span>Кино и лекции</span><span class="tag venue"><svg viewBox="0 0 24 24"><path d="M12 21s7-7.2 7-12a7 7 0 1 0-14 0c0 4.8 7 12 7 12z"></path><circle cx="12" cy="9" r="2.3"></circle></svg>Центр культурного развития</span></div></article><article class="card" style="--cat-color:var(--cat-kids)"><h3>«Касимов молодёжный»</h3><p>Региональный фестиваль «КультКод», открытие сезона игр КВН, экскурсия в Школу креативных индустрий, зона виртуального мира, мастер-классы, настольные и напольные игры, военно-спортивные площадки.</p><div class="tag-row"><span class="tag"><span class="dot" style="background:var(--cat-kids)"></span>Дети и молодёжь</span><span class="tag venue"><svg viewBox="0 0 24 24"><path d="M12 21s7-7.2 7-12a7 7 0 1 0-14 0c0 4.8 7 12 7 12z"></path><circle cx="12" cy="9" r="2.3"></circle></svg>Парк культуры и отдыха</span></div></article></div></div><div class="time-row" id="t-1400"><div class="time-label"><span class="t">14:00</span><span class="n">6 событий</span></div><div class="cards"><article class="card" style="--cat-color:var(--cat-folk)"><h3>«Касимовский казачий сполох»</h3><p>Концертная программа казачьих и народных коллективов — часть программы Года единства народов России.</p><div class="tag-row"><span class="tag"><span class="dot" style="background:var(--cat-folk)"></span>Народная культура</span><span class="tag venue"><svg viewBox="0 0 24 24"><path d="M12 21s7-7.2 7-12a7 7 0 1 0-14 0c0 4.8 7 12 7 12z"></path><circle cx="12" cy="9" r="2.3"></circle></svg>Площадь Соборная</span></div></article><article class="card" style="--cat-color:var(--cat-lit)"><h3>Литературная гостиная</h3><p class="who">Марина Лебедева и Валентина Спирина — касимовские поэты</p><p>Презентация новых поэтических сборников касимовских авторов.</p><div class="tag-row"><span class="tag"><span class="dot" style="background:var(--cat-lit)"></span>Литература и искусство</span><span class="tag venue"><svg viewBox="0 0 24 24"><path d="M12 21s7-7.2 7-12a7 7 0 1 0-14 0c0 4.8 7 12 7 12z"></path><circle cx="12" cy="9" r="2.3"></circle></svg>Сквер им. Пушкина</span></div></article><article class="card" style="--cat-color:var(--cat-lit)"><h3>Выставка «Краски любимого города»</h3><p>Итоги открытого пленэра «Рисуем вместе» и интерактивная площадка «Блиц-портрет» — можно получить свой скетч тут же, в сквере.</p><div class="tag-row"><span class="tag"><span class="dot" style="background:var(--cat-lit)"></span>Литература и искусство</span><span class="tag venue"><svg viewBox="0 0 24 24"><path d="M12 21s7-7.2 7-12a7 7 0 1 0-14 0c0 4.8 7 12 7 12z"></path><circle cx="12" cy="9" r="2.3"></circle></svg>Сквер им. Пушкина</span></div></article><article class="card" style="--cat-color:var(--cat-kids)"><h3>Детская анимационная программа</h3><p>Сказочные персонажи, конкурсы и аттракционы для самых маленьких гостей праздника.</p><div class="tag-row"><span class="tag"><span class="dot" style="background:var(--cat-kids)"></span>Дети и молодёжь</span><span class="tag venue"><svg viewBox="0 0 24 24"><path d="M12 21s7-7.2 7-12a7 7 0 1 0-14 0c0 4.8 7 12 7 12z"></path><circle cx="12" cy="9" r="2.3"></circle></svg>Главная сцена на Советской</span></div></article><article class="card" style="--cat-color:var(--cat-market)"><h3>Мастер-классы по кинопроизводству и фотозоны</h3><p>Интерактивные площадки на главной сцене — от съёмки короткого сюжета до тематических фотозон.</p><div class="tag-row"><span class="tag"><span class="dot" style="background:var(--cat-market)"></span>Ярмарка и мастер-классы</span><span class="tag venue"><svg viewBox="0 0 24 24"><path d="M12 21s7-7.2 7-12a7 7 0 1 0-14 0c0 4.8 7 12 7 12z"></path><circle cx="12" cy="9" r="2.3"></circle></svg>Главная сцена на Советской</span></div></article><article class="card" style="--cat-color:var(--cat-market)"><h3>Ярмарка мастеров и гастрономические ряды</h3><p>Выставка-продажа изделий декоративно-прикладного творчества и гастрономические ряды местных производителей.</p><div class="tag-row"><span class="tag"><span class="dot" style="background:var(--cat-market)"></span>Ярмарка и мастер-классы</span><span class="tag venue"><svg viewBox="0 0 24 24"><path d="M12 21s7-7.2 7-12a7 7 0 1 0-14 0c0 4.8 7 12 7 12z"></path><circle cx="12" cy="9" r="2.3"></circle></svg>Главная сцена на Советской</span></div></article></div></div><div class="day-divider">Вечер</div><div class="time-row" id="t-1600"><div class="time-label"><span class="t">16:00</span><span class="n">1 событие</span></div><div class="cards"><article class="card" style="--cat-color:var(--cat-ceremony)"><h3>Торжественное открытие праздника</h3><p>Выступление солистов и творческих коллективов Касимова, Рязани и Москвы на главной сцене.</p><div class="tag-row"><span class="tag"><span class="dot" style="background:var(--cat-ceremony)"></span>Открытие и награждения</span><span class="tag venue"><svg viewBox="0 0 24 24"><path d="M12 21s7-7.2 7-12a7 7 0 1 0-14 0c0 4.8 7 12 7 12z"></path><circle cx="12" cy="9" r="2.3"></circle></svg>Главная сцена на Советской</span></div></article></div></div><div class="time-row" id="t-1700"><div class="time-label"><span class="t">17:00</span><span class="n">1 событие</span></div><div class="cards"><article class="card" style="--cat-color:var(--cat-music)"><h3>Концертная программа «Музыка кино»</h3><p class="who">Эстрадно-духовой оркестр Рязанского областного дворца культуры и искусства</p><p>Живой оркестр исполняет знаковые темы из кино — продолжение темы дня, начатой утренним лекторием.</p><div class="tag-row"><span class="tag"><span class="dot" style="background:var(--cat-music)"></span>Музыка и концерты</span><span class="tag venue"><svg viewBox="0 0 24 24"><path d="M12 21s7-7.2 7-12a7 7 0 1 0-14 0c0 4.8 7 12 7 12z"></path><circle cx="12" cy="9" r="2.3"></circle></svg>Главная сцена на Советской</span></div></article></div></div><div class="time-row" id="t-1800"><div class="time-label"><span class="t">18:00</span><span class="n">1 событие</span></div><div class="cards"><article class="card" style="--cat-color:var(--cat-ceremony)"><h3>Награждение «Касимов в моменте»</h3><p>Торжественное подведение итогов и награждение победителей конкурса коротких видеороликов о городе.</p><div class="tag-row"><span class="tag"><span class="dot" style="background:var(--cat-ceremony)"></span>Открытие и награждения</span><span class="tag venue"><svg viewBox="0 0 24 24"><path d="M12 21s7-7.2 7-12a7 7 0 1 0-14 0c0 4.8 7 12 7 12z"></path><circle cx="12" cy="9" r="2.3"></circle></svg>Главная сцена на Советской</span></div></article></div></div><div class="time-row" id="t-1930"><div class="time-label"><span class="t">19:30</span><span class="n">1 событие</span></div><div class="cards"><article class="card" style="--cat-color:var(--cat-sport)"><h3>Старт забега «Динамо бежит по ночному Касимову»</h3><p>Массовый забег в рамках Всероссийского фестиваля спорта — старт от главной сцены после захода солнца.</p><div class="tag-row"><span class="tag"><span class="dot" style="background:var(--cat-sport)"></span>Спорт</span><span class="tag venue"><svg viewBox="0 0 24 24"><path d="M12 21s7-7.2 7-12a7 7 0 1 0-14 0c0 4.8 7 12 7 12z"></path><circle cx="12" cy="9" r="2.3"></circle></svg>Главная сцена на Советской</span></div></article></div></div><div class="time-row" id="t-2100"><div class="time-label"><span class="t">21:00</span><span class="n">1 событие</span></div><div class="cards"><article class="card" style="--cat-color:var(--cat-music)"><h3>Концерт кавер-группы TIMERS</h3><p>Финальный вечерний концерт праздничного дня на главной сцене.</p><div class="tag-row"><span class="tag"><span class="dot" style="background:var(--cat-music)"></span>Музыка и концерты</span><span class="tag venue"><svg viewBox="0 0 24 24"><path d="M12 21s7-7.2 7-12a7 7 0 1 0-14 0c0 4.8 7 12 7 12z"></path><circle cx="12" cy="9" r="2.3"></circle></svg>Главная сцена на Советской</span></div></article></div></div></div></main>
+
+  <footer>
+    <p>Афиша составлена по официальным анонсам Администрации Касимовского муниципального округа Рязанской области. Время и место уточняйте перед выходом — программа может корректироваться организаторами.</p>
+  </footer>
+</div>
+
+<script>
+(function(){
+  "use strict";
+
+  var CATS = [
+    { key:"cinema",   label:"Кино и лекции",        color:"var(--cat-cinema)"   },
+    { key:"kids",     label:"Дети и молодёжь",       color:"var(--cat-kids)"     },
+    { key:"folk",     label:"Народная культура",     color:"var(--cat-folk)"     },
+    { key:"lit",      label:"Литература и искусство",color:"var(--cat-lit)"      },
+    { key:"market",   label:"Ярмарка и мастер-классы",color:"var(--cat-market)"  },
+    { key:"ceremony", label:"Открытие и награждения",color:"var(--cat-ceremony)" },
+    { key:"music",    label:"Музыка и концерты",     color:"var(--cat-music)"    },
+    { key:"sport",    label:"Спорт",                 color:"var(--cat-sport)"    }
+  ];
+
+  var VENUES = [
+    { key:"stage",  label:"Главная сцена на Советской",  addr:"ул. Советская, главная сцена" },
+    { key:"park",   label:"Парк культуры и отдыха", addr:"Парк культуры и отдыха, МБУК «ЦКР»" },
+    { key:"ckr",    label:"Центр культурного развития", addr:"Центр культурного развития" },
+    { key:"square", label:"Площадь Соборная", addr:"пл. Соборная, 1 корпус Торговых рядов" },
+    { key:"pushkin",label:"Сквер им. Пушкина", addr:"Сквер им. А. С. Пушкина" }
+  ];
+
+  var EVENTS = [
+    { time:"12:00", cat:"cinema", venue:"ckr",
+      title:"Лекторий «Кино как пространство смыслов»",
+      who:"Александр Семенюк — киновед, сценарист, преподаватель",
+      desc:"Открытая лекция о кино как способе говорить о главном, с примерами из истории и практики кинопроизводства. При поддержке «Мосфильма»." },
+    { time:"12:00", cat:"kids", venue:"park",
+      title:"«Касимов молодёжный»",
+      who:"",
+      desc:"Региональный фестиваль «КультКод», открытие сезона игр КВН, экскурсия в Школу креативных индустрий, зона виртуального мира, мастер-классы, настольные и напольные игры, военно-спортивные площадки." },
+    { time:"14:00", cat:"folk", venue:"square",
+      title:"«Касимовский казачий сполох»",
+      who:"",
+      desc:"Концертная программа казачьих и народных коллективов — часть программы Года единства народов России." },
+    { time:"14:00", cat:"lit", venue:"pushkin",
+      title:"Литературная гостиная",
+      who:"Марина Лебедева и Валентина Спирина — касимовские поэты",
+      desc:"Презентация новых поэтических сборников касимовских авторов." },
+    { time:"14:00", cat:"lit", venue:"pushkin",
+      title:"Выставка «Краски любимого города»",
+      who:"",
+      desc:"Итоги открытого пленэра «Рисуем вместе» и интерактивная площадка «Блиц-портрет» — можно получить свой скетч тут же, в сквере." },
+    { time:"14:00", cat:"kids", venue:"stage",
+      title:"Детская анимационная программа",
+      who:"",
+      desc:"Сказочные персонажи, конкурсы и аттракционы для самых маленьких гостей праздника." },
+    { time:"14:00", cat:"market", venue:"stage",
+      title:"Мастер-классы по кинопроизводству и фотозоны",
+      who:"",
+      desc:"Интерактивные площадки на главной сцене — от съёмки короткого сюжета до тематических фотозон." },
+    { time:"14:00", cat:"market", venue:"stage",
+      title:"Ярмарка мастеров и гастрономические ряды",
+      who:"",
+      desc:"Выставка-продажа изделий декоративно-прикладного творчества и гастрономические ряды местных производителей." },
+    { time:"16:00", cat:"ceremony", venue:"stage",
+      title:"Торжественное открытие праздника",
+      who:"",
+      desc:"Выступление солистов и творческих коллективов Касимова, Рязани и Москвы на главной сцене." },
+    { time:"17:00", cat:"music", venue:"stage",
+      title:"Концертная программа «Музыка кино»",
+      who:"Эстрадно-духовой оркестр Рязанского областного дворца культуры и искусства",
+      desc:"Живой оркестр исполняет знаковые темы из кино — продолжение темы дня, начатой утренним лекторием." },
+    { time:"18:00", cat:"ceremony", venue:"stage",
+      title:"Награждение «Касимов в моменте»",
+      who:"",
+      desc:"Торжественное подведение итогов и награждение победителей конкурса коротких видеороликов о городе." },
+    { time:"19:30", cat:"sport", venue:"stage",
+      title:"Старт забега «Динамо бежит по ночному Касимову»",
+      who:"",
+      desc:"Массовый забег в рамках Всероссийского фестиваля спорта — старт от главной сцены после захода солнца." },
+    { time:"21:00", cat:"music", venue:"stage",
+      title:"Концерт кавер-группы TIMERS",
+      who:"",
+      desc:"Финальный вечерний концерт праздничного дня на главной сцене." }
+  ];
+
+  function toMinutes(t){
+    var p = t.split(":"); return (+p[0])*60 + (+p[1]);
+  }
+  EVENTS.forEach(function(e){ e.minutes = toMinutes(e.time); });
+  EVENTS.sort(function(a,b){ return a.minutes - b.minutes; });
+
+  var catByKey = {}; CATS.forEach(function(c){ catByKey[c.key]=c; });
+  var venueByKey = {}; VENUES.forEach(function(v){ venueByKey[v.key]=v; });
+
+  var state = { search:"", cats:new Set(), venues:new Set(), view:"timeline" };
+  try{
+    var saved = localStorage.getItem("kasimov-view");
+    if(saved === "venue" || saved === "timeline") state.view = saved;
+  }catch(e){}
+
+  var mainEl = document.getElementById("main");
+  var catChipsEl = document.getElementById("cat-chips");
+  var venueChipsEl = document.getElementById("venue-chips");
+  var jumpnavEl = document.getElementById("jumpnav");
+  var resultCountEl = document.getElementById("result-count");
+  var resetBtn = document.getElementById("reset-btn");
+
+  function buildChips(list, container, stateSet, isVenue){
+    container.innerHTML = "";
+    list.forEach(function(item){
+      var chip = document.createElement("button");
+      chip.className = "chip";
+      chip.type = "button";
+      chip.setAttribute("aria-pressed","false");
+      chip.dataset.key = item.key;
+      var dot = document.createElement("span");
+      dot.className = "dot";
+      if(!isVenue) dot.style.background = item.color;
+      else dot.style.background = "var(--ink-faint)";
+      chip.appendChild(dot);
+      chip.appendChild(document.createTextNode(item.label));
+      chip.addEventListener("click", function(){
+        if(stateSet.has(item.key)) stateSet.delete(item.key);
+        else stateSet.add(item.key);
+        chip.setAttribute("aria-pressed", stateSet.has(item.key) ? "true":"false");
+        render();
+      });
+      container.appendChild(chip);
+    });
+  }
+  buildChips(CATS, catChipsEl, state.cats, false);
+  buildChips(VENUES, venueChipsEl, state.venues, true);
+
+  var uniqueTimes = [];
+  EVENTS.forEach(function(e){ if(uniqueTimes.indexOf(e.time)===-1) uniqueTimes.push(e.time); });
+  uniqueTimes.forEach(function(t){
+    var a = document.createElement("a");
+    a.href = "#t-" + t.replace(":","");
+    a.textContent = t;
+    jumpnavEl.appendChild(a);
+  });
+
+  document.getElementById("search").addEventListener("input", function(ev){
+    state.search = ev.target.value.trim().toLowerCase();
+    render();
+  });
+
+  function setView(v){
+    state.view = v;
+    document.getElementById("view-timeline").classList.toggle("active", v==="timeline");
+    document.getElementById("view-timeline").setAttribute("aria-pressed", v==="timeline");
+    document.getElementById("view-venue").classList.toggle("active", v==="venue");
+    document.getElementById("view-venue").setAttribute("aria-pressed", v==="venue");
+    jumpnavEl.style.display = v==="timeline" ? "flex":"none";
+    try{ localStorage.setItem("kasimov-view", v); }catch(e){}
+    render();
+  }
+  document.getElementById("view-timeline").addEventListener("click", function(){ setView("timeline"); });
+  document.getElementById("view-venue").addEventListener("click", function(){ setView("venue"); });
+
+  resetBtn.addEventListener("click", function(){
+    state.search=""; state.cats.clear(); state.venues.clear();
+    document.getElementById("search").value="";
+    catChipsEl.querySelectorAll(".chip").forEach(function(c){ c.setAttribute("aria-pressed","false"); });
+    venueChipsEl.querySelectorAll(".chip").forEach(function(c){ c.setAttribute("aria-pressed","false"); });
+    render();
+  });
+
+  function matches(e){
+    if(state.cats.size && !state.cats.has(e.cat)) return false;
+    if(state.venues.size && !state.venues.has(e.venue)) return false;
+    if(state.search){
+      var hay = (e.title+" "+e.desc+" "+e.who+" "+venueByKey[e.venue].label).toLowerCase();
+      if(hay.indexOf(state.search)===-1) return false;
+    }
+    return true;
+  }
+
+  function pluralEvents(n){
+    var mod10=n%10, mod100=n%100;
+    if(mod10===1 && mod100!==11) return "событие";
+    if(mod10>=2 && mod10<=4 && (mod100<10||mod100>=20)) return "события";
+    return "событий";
+  }
+
+  function cardHtml(e){
+    var cat = catByKey[e.cat], venue = venueByKey[e.venue];
+    var whoHtml = e.who ? '<p class="who">'+escapeHtml(e.who)+'</p>' : '';
+    return '' +
+      '<article class="card" style="--cat-color:'+cat.color+'">' +
+        '<h3>'+escapeHtml(e.title)+'</h3>' +
+        whoHtml +
+        '<p>'+escapeHtml(e.desc)+'</p>' +
+        '<div class="tag-row">' +
+          '<span class="tag"><span class="dot" style="background:'+cat.color+'"></span>'+cat.label+'</span>' +
+          '<span class="tag venue"><svg viewBox="0 0 24 24"><path d="M12 21s7-7.2 7-12a7 7 0 1 0-14 0c0 4.8 7 12 7 12z"></path><circle cx="12" cy="9" r="2.3"></circle></svg>'+venue.label+'</span>' +
+        '</div>' +
+      '</article>';
+  }
+
+  function vrowHtml(e){
+    var cat = catByKey[e.cat];
+    var whoHtml = e.who ? '<p style="font-style:italic;color:var(--ink-faint);margin-top:0.15rem;">'+escapeHtml(e.who)+'</p>' : '';
+    return '' +
+      '<div class="vrow" style="--cat-color:'+cat.color+'">' +
+        '<span class="vtime">'+e.time+'</span>' +
+        '<div class="vbody">' +
+          '<h3>'+escapeHtml(e.title)+'</h3>' +
+          '<p>'+escapeHtml(e.desc)+'</p>' +
+          whoHtml +
+        '</div>' +
+      '</div>';
+  }
+
+  function escapeHtml(s){
+    return s.replace(/[&<>"']/g, function(c){
+      return {"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c];
+    });
+  }
+
+  function render(){
+    var filtered = EVENTS.filter(matches);
+
+    resultCountEl.textContent = filtered.length === EVENTS.length
+      ? "Показаны все "+EVENTS.length+" "+pluralEvents(EVENTS.length)
+      : "Показано "+filtered.length+" из "+EVENTS.length;
+    var filtersActive = state.search || state.cats.size || state.venues.size;
+    resetBtn.disabled = !filtersActive;
+
+    if(!filtered.length){
+      mainEl.innerHTML = '<div class="empty"><h3>Ничего не нашлось</h3><p>Попробуйте другой запрос или снимите часть фильтров.</p><button id="empty-reset">Сбросить фильтры</button></div>';
+      document.getElementById("empty-reset").addEventListener("click", function(){ resetBtn.click(); });
+      return;
+    }
+
+    if(state.view === "timeline"){
+      var byTime = {};
+      filtered.forEach(function(e){ (byTime[e.time]=byTime[e.time]||[]).push(e); });
+      var html = '<div class="timeline">';
+      var lastPhase = "";
+      uniqueTimes.forEach(function(t){
+        if(!byTime[t]) return;
+        var phase = toMinutes(t) < 960 ? "День" : "Вечер"; // 16:00 = день/вечер порог
+        if(phase !== lastPhase){
+          html += '<div class="day-divider">'+phase+'</div>';
+          lastPhase = phase;
+        }
+        var list = byTime[t];
+        html += '<div class="time-row" id="t-'+t.replace(":","")+'">' +
+          '<div class="time-label"><span class="t">'+t+'</span><span class="n">'+list.length+' '+pluralEvents(list.length)+'</span></div>' +
+          '<div class="cards">' + list.map(cardHtml).join("") + '</div>' +
+        '</div>';
+      });
+      html += '</div>';
+      mainEl.innerHTML = html;
+    } else {
+      var byVenue = {};
+      filtered.forEach(function(e){ (byVenue[e.venue]=byVenue[e.venue]||[]).push(e); });
+      var html2 = "";
+      VENUES.forEach(function(v){
+        var list = byVenue[v.key];
+        if(!list || !list.length) return;
+        html2 += '<section class="venue-section">' +
+          '<div class="venue-head"><h2>'+v.label+'</h2><span class="count">'+list.length+' '+pluralEvents(list.length)+'</span></div>' +
+          '<div class="venue-addr">'+v.addr+'</div>' +
+          '<div class="venue-list">' + list.map(vrowHtml).join("") + '</div>' +
+        '</section>';
+      });
+      mainEl.innerHTML = html2;
+    }
+  }
+
+  // date / countdown
+  try{
+    var eventDate = new Date(2026, 8, 12);
+    var today = new Date(2026, 8, 10);
+    document.getElementById("weekday").textContent = eventDate.toLocaleDateString("ru-RU", { weekday:"long" });
+    var diffDays = Math.round((eventDate - today) / 86400000);
+    var cd = document.getElementById("countdown");
+    if(diffDays > 1) cd.textContent = "через "+diffDays+" дня";
+    else if(diffDays === 1) cd.textContent = "уже завтра";
+    else if(diffDays === 0) cd.textContent = "сегодня";
+    else cd.textContent = "";
+  }catch(e){}
+
+  jumpnavEl.style.display = state.view==="timeline" ? "flex":"none";
+  document.getElementById("view-timeline").classList.toggle("active", state.view==="timeline");
+  document.getElementById("view-timeline").setAttribute("aria-pressed", state.view==="timeline");
+  document.getElementById("view-venue").classList.toggle("active", state.view==="venue");
+  document.getElementById("view-venue").setAttribute("aria-pressed", state.view==="venue");
+
+  render();
+})();
+</script>
+</body></html>
