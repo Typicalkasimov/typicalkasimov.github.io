@@ -1,8 +1,12 @@
-
-<!-- saved from url=(0120)file:///private/tmp/claude-501/-Users-andrejivanov/14d67982-1490-4142-be59-23a3089cd4d6/scratchpad/kasimov-city-day.html -->
-<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><title>День города Касимов</title>
-<link rel="preconnect" href="https://fonts.googleapis.com/">
-<link rel="stylesheet" href="./День города Касимов_files/css2">
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="light dark">
+<title>День города Касимов</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Spectral:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Manrope:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap">
 <style>
   :root{
     --bg: #f2f3ec;
@@ -81,12 +85,16 @@
   }
 
   *{box-sizing:border-box;}
+  html{ -webkit-text-size-adjust:100%; overflow-x:hidden; }
   body{
+    margin:0;
     background:var(--bg);
     color:var(--ink);
     font-family:'Manrope',system-ui,sans-serif;
     line-height:1.5;
+    overflow-x:hidden;
   }
+  img{ max-width:100%; }
   ::selection{ background:var(--accent-wash); }
   a{ color:inherit; }
   h1,h2,h3{
@@ -342,7 +350,7 @@
 
   @media (max-width:560px){
     .chip-group-label{ width:auto; }
-    .card, .vrow{ }
+    .wrap{ padding:0 1.1rem; }
   }
 
   @media (prefers-reduced-motion: reduce){
@@ -350,19 +358,21 @@
   }
   html{ scroll-behavior:smooth; }
 </style>
+</head>
+<body>
 
-</head><body><div class="wrap">
+<div class="wrap">
   <header class="hero">
     <div class="eyebrow">Администрация Касимовского муниципального округа · Рязанская область</div>
     <h1>Касимов отмечает<br><em>День города</em></h1>
     <p class="hero-sub">Один день — пять площадок и тринадцать событий: от лектория о кино и казачьих песен на Соборной до ночного забега вдоль Оки. Отфильтруйте афишу по интересу или площадке и стройте свой маршрут по городу.</p>
     <div class="hero-meta">
-      <span class="date-chip">12 сентября 2026 · <b id="weekday">суббота</b></span>
-      <span class="countdown" id="countdown">через 2 дня</span>
+      <span class="date-chip">12 сентября 2026 · <b id="weekday"></b></span>
+      <span class="countdown" id="countdown"></span>
     </div>
 
     <svg class="river-divider" viewBox="0 0 600 22" preserveAspectRatio="none" aria-hidden="true">
-      <path d="M0 11 C 60 2, 120 20, 180 11 S 300 2, 360 11 S 480 20, 540 11 S 600 4, 600 11"></path>
+      <path d="M0 11 C 60 2, 120 20, 180 11 S 300 2, 360 11 S 480 20, 540 11 S 600 4, 600 11" />
       <circle cx="60" cy="6.5" r="2.2"></circle>
       <circle cx="300" cy="7" r="2.2"></circle>
       <circle cx="540" cy="6" r="2.2"></circle>
@@ -390,23 +400,23 @@
     <div class="chip-groups">
       <div class="chip-group">
         <span class="chip-group-label">Тема</span>
-        <div class="chip-scroll" id="cat-chips"><button class="chip" type="button" aria-pressed="false" data-key="cinema"><span class="dot" style="background: var(--cat-cinema);"></span>Кино и лекции</button><button class="chip" type="button" aria-pressed="false" data-key="kids"><span class="dot" style="background: var(--cat-kids);"></span>Дети и молодёжь</button><button class="chip" type="button" aria-pressed="false" data-key="folk"><span class="dot" style="background: var(--cat-folk);"></span>Народная культура</button><button class="chip" type="button" aria-pressed="false" data-key="lit"><span class="dot" style="background: var(--cat-lit);"></span>Литература и искусство</button><button class="chip" type="button" aria-pressed="false" data-key="market"><span class="dot" style="background: var(--cat-market);"></span>Ярмарка и мастер-классы</button><button class="chip" type="button" aria-pressed="false" data-key="ceremony"><span class="dot" style="background: var(--cat-ceremony);"></span>Открытие и награждения</button><button class="chip" type="button" aria-pressed="false" data-key="music"><span class="dot" style="background: var(--cat-music);"></span>Музыка и концерты</button><button class="chip" type="button" aria-pressed="false" data-key="sport"><span class="dot" style="background: var(--cat-sport);"></span>Спорт</button></div>
+        <div class="chip-scroll" id="cat-chips"></div>
       </div>
       <div class="chip-group">
         <span class="chip-group-label">Площадка</span>
-        <div class="chip-scroll" id="venue-chips"><button class="chip" type="button" aria-pressed="false" data-key="stage"><span class="dot" style="background: var(--ink-faint);"></span>Главная сцена на Советской</button><button class="chip" type="button" aria-pressed="false" data-key="park"><span class="dot" style="background: var(--ink-faint);"></span>Парк культуры и отдыха</button><button class="chip" type="button" aria-pressed="false" data-key="ckr"><span class="dot" style="background: var(--ink-faint);"></span>Центр культурного развития</button><button class="chip" type="button" aria-pressed="false" data-key="square"><span class="dot" style="background: var(--ink-faint);"></span>Площадь Соборная</button><button class="chip" type="button" aria-pressed="false" data-key="pushkin"><span class="dot" style="background: var(--ink-faint);"></span>Сквер им. Пушкина</button></div>
+        <div class="chip-scroll" id="venue-chips"></div>
       </div>
     </div>
 
-    <div class="jumpnav" id="jumpnav" style="display: flex;"><a href="file:///private/tmp/claude-501/-Users-andrejivanov/14d67982-1490-4142-be59-23a3089cd4d6/scratchpad/kasimov-city-day.html#t-1200">12:00</a><a href="file:///private/tmp/claude-501/-Users-andrejivanov/14d67982-1490-4142-be59-23a3089cd4d6/scratchpad/kasimov-city-day.html#t-1400">14:00</a><a href="file:///private/tmp/claude-501/-Users-andrejivanov/14d67982-1490-4142-be59-23a3089cd4d6/scratchpad/kasimov-city-day.html#t-1600">16:00</a><a href="file:///private/tmp/claude-501/-Users-andrejivanov/14d67982-1490-4142-be59-23a3089cd4d6/scratchpad/kasimov-city-day.html#t-1700">17:00</a><a href="file:///private/tmp/claude-501/-Users-andrejivanov/14d67982-1490-4142-be59-23a3089cd4d6/scratchpad/kasimov-city-day.html#t-1800">18:00</a><a href="file:///private/tmp/claude-501/-Users-andrejivanov/14d67982-1490-4142-be59-23a3089cd4d6/scratchpad/kasimov-city-day.html#t-1930">19:30</a><a href="file:///private/tmp/claude-501/-Users-andrejivanov/14d67982-1490-4142-be59-23a3089cd4d6/scratchpad/kasimov-city-day.html#t-2100">21:00</a></div>
+    <div class="jumpnav" id="jumpnav"></div>
 
     <div class="result-line">
-      <span id="result-count">Показаны все 13 событий</span>
-      <button class="reset-link" id="reset-btn" disabled="">Сбросить фильтры</button>
+      <span id="result-count">Показаны все 13 события</span>
+      <button class="reset-link" id="reset-btn" disabled>Сбросить фильтры</button>
     </div>
   </div>
 
-  <main id="main"><div class="timeline"><div class="day-divider">День</div><div class="time-row" id="t-1200"><div class="time-label"><span class="t">12:00</span><span class="n">2 события</span></div><div class="cards"><article class="card" style="--cat-color:var(--cat-cinema)"><h3>Лекторий «Кино как пространство смыслов»</h3><p class="who">Александр Семенюк — киновед, сценарист, преподаватель</p><p>Открытая лекция о кино как способе говорить о главном, с примерами из истории и практики кинопроизводства. При поддержке «Мосфильма».</p><div class="tag-row"><span class="tag"><span class="dot" style="background:var(--cat-cinema)"></span>Кино и лекции</span><span class="tag venue"><svg viewBox="0 0 24 24"><path d="M12 21s7-7.2 7-12a7 7 0 1 0-14 0c0 4.8 7 12 7 12z"></path><circle cx="12" cy="9" r="2.3"></circle></svg>Центр культурного развития</span></div></article><article class="card" style="--cat-color:var(--cat-kids)"><h3>«Касимов молодёжный»</h3><p>Региональный фестиваль «КультКод», открытие сезона игр КВН, экскурсия в Школу креативных индустрий, зона виртуального мира, мастер-классы, настольные и напольные игры, военно-спортивные площадки.</p><div class="tag-row"><span class="tag"><span class="dot" style="background:var(--cat-kids)"></span>Дети и молодёжь</span><span class="tag venue"><svg viewBox="0 0 24 24"><path d="M12 21s7-7.2 7-12a7 7 0 1 0-14 0c0 4.8 7 12 7 12z"></path><circle cx="12" cy="9" r="2.3"></circle></svg>Парк культуры и отдыха</span></div></article></div></div><div class="time-row" id="t-1400"><div class="time-label"><span class="t">14:00</span><span class="n">6 событий</span></div><div class="cards"><article class="card" style="--cat-color:var(--cat-folk)"><h3>«Касимовский казачий сполох»</h3><p>Концертная программа казачьих и народных коллективов — часть программы Года единства народов России.</p><div class="tag-row"><span class="tag"><span class="dot" style="background:var(--cat-folk)"></span>Народная культура</span><span class="tag venue"><svg viewBox="0 0 24 24"><path d="M12 21s7-7.2 7-12a7 7 0 1 0-14 0c0 4.8 7 12 7 12z"></path><circle cx="12" cy="9" r="2.3"></circle></svg>Площадь Соборная</span></div></article><article class="card" style="--cat-color:var(--cat-lit)"><h3>Литературная гостиная</h3><p class="who">Марина Лебедева и Валентина Спирина — касимовские поэты</p><p>Презентация новых поэтических сборников касимовских авторов.</p><div class="tag-row"><span class="tag"><span class="dot" style="background:var(--cat-lit)"></span>Литература и искусство</span><span class="tag venue"><svg viewBox="0 0 24 24"><path d="M12 21s7-7.2 7-12a7 7 0 1 0-14 0c0 4.8 7 12 7 12z"></path><circle cx="12" cy="9" r="2.3"></circle></svg>Сквер им. Пушкина</span></div></article><article class="card" style="--cat-color:var(--cat-lit)"><h3>Выставка «Краски любимого города»</h3><p>Итоги открытого пленэра «Рисуем вместе» и интерактивная площадка «Блиц-портрет» — можно получить свой скетч тут же, в сквере.</p><div class="tag-row"><span class="tag"><span class="dot" style="background:var(--cat-lit)"></span>Литература и искусство</span><span class="tag venue"><svg viewBox="0 0 24 24"><path d="M12 21s7-7.2 7-12a7 7 0 1 0-14 0c0 4.8 7 12 7 12z"></path><circle cx="12" cy="9" r="2.3"></circle></svg>Сквер им. Пушкина</span></div></article><article class="card" style="--cat-color:var(--cat-kids)"><h3>Детская анимационная программа</h3><p>Сказочные персонажи, конкурсы и аттракционы для самых маленьких гостей праздника.</p><div class="tag-row"><span class="tag"><span class="dot" style="background:var(--cat-kids)"></span>Дети и молодёжь</span><span class="tag venue"><svg viewBox="0 0 24 24"><path d="M12 21s7-7.2 7-12a7 7 0 1 0-14 0c0 4.8 7 12 7 12z"></path><circle cx="12" cy="9" r="2.3"></circle></svg>Главная сцена на Советской</span></div></article><article class="card" style="--cat-color:var(--cat-market)"><h3>Мастер-классы по кинопроизводству и фотозоны</h3><p>Интерактивные площадки на главной сцене — от съёмки короткого сюжета до тематических фотозон.</p><div class="tag-row"><span class="tag"><span class="dot" style="background:var(--cat-market)"></span>Ярмарка и мастер-классы</span><span class="tag venue"><svg viewBox="0 0 24 24"><path d="M12 21s7-7.2 7-12a7 7 0 1 0-14 0c0 4.8 7 12 7 12z"></path><circle cx="12" cy="9" r="2.3"></circle></svg>Главная сцена на Советской</span></div></article><article class="card" style="--cat-color:var(--cat-market)"><h3>Ярмарка мастеров и гастрономические ряды</h3><p>Выставка-продажа изделий декоративно-прикладного творчества и гастрономические ряды местных производителей.</p><div class="tag-row"><span class="tag"><span class="dot" style="background:var(--cat-market)"></span>Ярмарка и мастер-классы</span><span class="tag venue"><svg viewBox="0 0 24 24"><path d="M12 21s7-7.2 7-12a7 7 0 1 0-14 0c0 4.8 7 12 7 12z"></path><circle cx="12" cy="9" r="2.3"></circle></svg>Главная сцена на Советской</span></div></article></div></div><div class="day-divider">Вечер</div><div class="time-row" id="t-1600"><div class="time-label"><span class="t">16:00</span><span class="n">1 событие</span></div><div class="cards"><article class="card" style="--cat-color:var(--cat-ceremony)"><h3>Торжественное открытие праздника</h3><p>Выступление солистов и творческих коллективов Касимова, Рязани и Москвы на главной сцене.</p><div class="tag-row"><span class="tag"><span class="dot" style="background:var(--cat-ceremony)"></span>Открытие и награждения</span><span class="tag venue"><svg viewBox="0 0 24 24"><path d="M12 21s7-7.2 7-12a7 7 0 1 0-14 0c0 4.8 7 12 7 12z"></path><circle cx="12" cy="9" r="2.3"></circle></svg>Главная сцена на Советской</span></div></article></div></div><div class="time-row" id="t-1700"><div class="time-label"><span class="t">17:00</span><span class="n">1 событие</span></div><div class="cards"><article class="card" style="--cat-color:var(--cat-music)"><h3>Концертная программа «Музыка кино»</h3><p class="who">Эстрадно-духовой оркестр Рязанского областного дворца культуры и искусства</p><p>Живой оркестр исполняет знаковые темы из кино — продолжение темы дня, начатой утренним лекторием.</p><div class="tag-row"><span class="tag"><span class="dot" style="background:var(--cat-music)"></span>Музыка и концерты</span><span class="tag venue"><svg viewBox="0 0 24 24"><path d="M12 21s7-7.2 7-12a7 7 0 1 0-14 0c0 4.8 7 12 7 12z"></path><circle cx="12" cy="9" r="2.3"></circle></svg>Главная сцена на Советской</span></div></article></div></div><div class="time-row" id="t-1800"><div class="time-label"><span class="t">18:00</span><span class="n">1 событие</span></div><div class="cards"><article class="card" style="--cat-color:var(--cat-ceremony)"><h3>Награждение «Касимов в моменте»</h3><p>Торжественное подведение итогов и награждение победителей конкурса коротких видеороликов о городе.</p><div class="tag-row"><span class="tag"><span class="dot" style="background:var(--cat-ceremony)"></span>Открытие и награждения</span><span class="tag venue"><svg viewBox="0 0 24 24"><path d="M12 21s7-7.2 7-12a7 7 0 1 0-14 0c0 4.8 7 12 7 12z"></path><circle cx="12" cy="9" r="2.3"></circle></svg>Главная сцена на Советской</span></div></article></div></div><div class="time-row" id="t-1930"><div class="time-label"><span class="t">19:30</span><span class="n">1 событие</span></div><div class="cards"><article class="card" style="--cat-color:var(--cat-sport)"><h3>Старт забега «Динамо бежит по ночному Касимову»</h3><p>Массовый забег в рамках Всероссийского фестиваля спорта — старт от главной сцены после захода солнца.</p><div class="tag-row"><span class="tag"><span class="dot" style="background:var(--cat-sport)"></span>Спорт</span><span class="tag venue"><svg viewBox="0 0 24 24"><path d="M12 21s7-7.2 7-12a7 7 0 1 0-14 0c0 4.8 7 12 7 12z"></path><circle cx="12" cy="9" r="2.3"></circle></svg>Главная сцена на Советской</span></div></article></div></div><div class="time-row" id="t-2100"><div class="time-label"><span class="t">21:00</span><span class="n">1 событие</span></div><div class="cards"><article class="card" style="--cat-color:var(--cat-music)"><h3>Концерт кавер-группы TIMERS</h3><p>Финальный вечерний концерт праздничного дня на главной сцене.</p><div class="tag-row"><span class="tag"><span class="dot" style="background:var(--cat-music)"></span>Музыка и концерты</span><span class="tag venue"><svg viewBox="0 0 24 24"><path d="M12 21s7-7.2 7-12a7 7 0 1 0-14 0c0 4.8 7 12 7 12z"></path><circle cx="12" cy="9" r="2.3"></circle></svg>Главная сцена на Советской</span></div></article></div></div></div></main>
+  <main id="main"></main>
 
   <footer>
     <p>Афиша составлена по официальным анонсам Администрации Касимовского муниципального округа Рязанской области. Время и место уточняйте перед выходом — программа может корректироваться организаторами.</p>
@@ -700,4 +710,5 @@
   render();
 })();
 </script>
-</body></html>
+</body>
+</html>
